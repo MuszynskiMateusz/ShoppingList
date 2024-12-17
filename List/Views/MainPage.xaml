@@ -1,0 +1,20 @@
+﻿
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:List.Views"
+             x:Class="List.Views.MainPage"
+             Title="Kategorie">
+    <StackLayout Padding="10">
+        <Button Text="Dodaj kategorię" Clicked="OnAddCategoryClicked" />
+
+        <CollectionView ItemsSource="{Binding Categories}" SelectionMode="Single" SelectionChanged="OnCategorySelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
